@@ -40,11 +40,14 @@ class AnkiWriter:
         notes = []
         # TODO: Create a note for each word in the word_list from the given dictionary
         # and append every note in the notes list.
-        fields = [self.question, self.answer]
-
-        note = genanki.Note(model=model, fields=fields)
-        # TODO: Return the notes list
-        return note
+        for word_dict in self.__word_list:
+            for word in word_dict:
+                answer = word_dict[word]
+                #TODO: Add the audio file in the third pos
+                fields = [word, answer, ""]
+                note = genanki.Note(model, fields)
+                notes.append(note)
+        return notes
     
     def __parse_deck_to_anki_apkg(self):
         date = datetime.now()
