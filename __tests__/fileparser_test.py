@@ -1,7 +1,6 @@
-import sys
-sys.path.append('../src')
-
 import unittest
+import sys
+sys.path.append('../src/fileparser.py')
 from fileparser import FileParser
 
 class FileParserTest(unittest.TestCase):
