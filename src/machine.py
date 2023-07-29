@@ -1,6 +1,5 @@
 import os
 from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.by import By
 from time import sleep
 from dotenv import load_dotenv
