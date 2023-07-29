@@ -24,7 +24,8 @@ class AnkiWriter:
 
     def __create_model(self):
         model_id = randrange(1 << 30, 1 << 31)
-        model = genanki.Model(model_id, self.__deck_name, fields=[
+        model = genanki.Model(model_id, self.__deck_name, 
+        fields=[
             {"name": "Question"}, 
             {"name": "Answer"},
             {"name": "Audio"}
@@ -54,7 +55,6 @@ class AnkiWriter:
         path_to_word = f'{self.__sounds_dir_path}/pronunciation_ja_{word}.mp3'
         if not os.path.exists(path_to_word):
             return None
-        print(os.path.basename(path_to_word))
         return os.path.basename(path_to_word)
         
 
